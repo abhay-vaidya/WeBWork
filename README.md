@@ -4,6 +4,15 @@
 
 WeBWorK is a proof-of-concept Java desktop application for courses that incorporate multiple-choice quizzes and assignments.
 
+#### Features include:
+- Assignment Creation with unlimited number of multiple-choice questions
+- Assignment editing
+- Multiple tries to complete assignments
+- Viewing and exporting assignment results
+- Assignment remark system
+- Course feedback system
+
+
 ### WeBWorK Welcome Page
 ![webwork_login_page](https://user-images.githubusercontent.com/12486014/33279148-910ea0ce-d36b-11e7-89aa-b4e7bc09fc7f.png)
 
@@ -22,7 +31,7 @@ WeBWorK is a proof-of-concept Java desktop application for courses that incorpor
 ### Assignment Creation
 ![assignment_creation](https://user-images.githubusercontent.com/12486014/33287260-26d5ff66-d386-11e7-9ed7-68c38d7ef642.png)
 
-### Assignment Editting
+### Assignment Editing
 ![editing](https://user-images.githubusercontent.com/12486014/33287281-35bfdda8-d386-11e7-8408-8d49a4f1ea15.png)
 
 ### Student Dashboard
@@ -61,7 +70,7 @@ WeBWorK is a proof-of-concept Java desktop application for courses that incorpor
 
 ### User Instructions
 ##### Setup
-- Due to usage of an external library, JavaMail, if the program is being run through an IDE, the user must reconfigure their java build path to access the library. The API is found as 5 jar files in the **_lib_** folder in the project and you must add them to your build path.
+- Due to the usage of an external library, JavaMail, if the program is being run through an IDE, the user must reconfigure their Java build path to access the library. The API is found as 5 jar files in the **_lib_** folder in the project and you must add them to your build path.
 - Go to `ApplicationDriver.java` under the `controllers` package
 - Run `ApplicationDriver.java` and you will see a login/register interface
 
@@ -71,40 +80,40 @@ WeBWorK is a proof-of-concept Java desktop application for courses that incorpor
 - You will have to check the **_Instructor_** checkbox before clicking **_Register_**
 - You will be presented with a screen to ask you input your first name, last name and passcode to finish your registration 
 - As an instructor, you will need to provide a valid passcode for the course in order to register as an instructor successfully. If you are the first instructor, you are considered the admin and will be required to set the passcode for all other instructors.
-- You wll see a popup window notifying you of a successful registration after you have entered all the information properly and submit.
+- You will see a popup window notifying you of a successful registration after you have entered all the information properly and submit.
 
 ##### Login
 - After you have registered successfully, you will be able to log in to the instructor dashboard using the same email address and password that you registered with (it is not necessary to check the instructor box)
 
 ##### Creating a Problem Set
 - Open the assignment creation panel by clicking the **_+ Add Assignment_** button at the top right corner
-- Select a due date of the assignment by clicking the drop down box on the left top
+- Select a due date of the assignment by clicking the drop-down box on the left top
 - Enter the assignment number you are going to create
 - Manually enter each problem corresponding multiple choice options
 - Preset the solution for each question by clicking the corresponding radio button for the correct multiple choice option
-- After you have entered all the required information for the question, you can click **_Add this Problem_** to add the problem into the problem set
+- After you have entered all the required information for the question, you can click **_Add this Problem_** to add the problem to the problem set
 - If you have not entered all the required information before clicking **_Add this Problem_**, you will get a popup notification to ask you fulfill all the required text
-- Repeatly do the steps above until you have added all the problems to the problem set for the current assignment 
+- Repeatedly do the steps above until you have added all the problems to the problem set for the current assignment 
 - Click the **_Create_** button after you have entered all your problems to finish creating the assignment
 - As an instructor, you can release and unrelease assignments by clicking the labeled buttons corresponding to the appropriate assignments
 
 ##### Assignment Editing
-- Cick **_Edit_** button on the dashboard beside the assignment that you wish to edit
-- Use the dropdown menu to slect the question you want to modify
+- Click **_Edit_** button on the dashboard beside the assignment that you wish to edit
+- Use the drop-down menu to select the question you want to modify
 - Once selected, you can edit the problem, the multiple choices, and its solution on the panel directly. Click **_Save Edited Problem_** once you are done editing.  
-- If you wish to delete a question, select the question you wish to delete from the dropdown menu, then click **_Remove problem_**
+- If you wish to delete a question, select the question you wish to delete from the drop-down menu, then click **_Remove problem_**
 - If you wish to add a new question to this assignment, you need to click **_Clear_** to clear all the default text in the boxes first. Enter the new assignment question, multiple choice options and its solution to the corresponding text fields and then click **_Add new problem_**.
 - After you have completed all necessary changes to the assignment, you need to click **_Save_** to save all your changes. After you click **_Save_**, the application will take you back to the dashboard.
 - Now your edited assignment will return be listed as **_Unreleased_**. You may now click **_Release_** to release the assignment to the students once more.
 
 ##### Grade Analysis & Retrieval
 - The class average of each closed assignment is displayed on the dashboard automatically after the assignment due date has passed. You can check out the class average under the _Closed_ assignments session.
-- If you would like to export a copy of an excel spreadsheet which includes all the students performances for a given assignment, click **_Export Mark_** for the assignment data you would like to review. A file-chooser window will open after clicking **_Export Mark_**, you can save the copy of the document to anywhere on your computer by choosing a directory. The new assignment details result file will replace the old file if the file has already exist in the directory you chose. 
-- If you would like to get a summary of the performance of an individual student, you can search for their results by clicking **_Search Student_**. After clicking **_Search Student_**, it will open a search panel where you need to enter the student number into the text field and then click **_Search_**. All the marks that this student has achived in the past assignments will be displayed on the display panel. 
+- If you would like to export a copy of an excel spreadsheet which includes all the students' performances for a given assignment, click **_Export Mark_** for the assignment data you would like to review. A file-chooser window will open after clicking **_Export Mark_**, you can save the copy of the document to anywhere on your computer by choosing a directory. The new assignment details result file will replace the old file if the file has already existed in the directory you chose. 
+- If you would like to get a summary of the performance of an individual student, you can search for their results by clicking **_Search Student_**. After clicking **_Search Student_**, it will open a search panel where you need to enter the student number into the text field and then click **_Search_**. All the marks that this student has achieved in the past assignments will be displayed on the display panel. 
 
 ##### Remarks
 - All the remark requests would be sent to your email directly through this application system once the student clicks the remark button on their student panel. Check your emails to view all the remark requests.
-- If you want to approve a remark request, you can go to your dashboard and click the **_Remark_** button. Enter the student number and the assignment number which you are handling, and the student's final mark to the text box. Click **_Adjust Mark_** to save the changes to the database and the application system will send an email to notify the student with the change of his/her mark automatically. Click **_Cancel_** if you would like to go back to the dashboard. 
+- If you want to approve a remark request, you can go to your dashboard and click the **_Remark_** button. Enter the student number and the assignment number which you are handling, and the student's final mark to the text box. Click **_Adjust Mark_** to save the changes to the database and the application system will send an email to notify the student of the change of his/her mark automatically. Click **_Cancel_** if you would like to go back to the dashboard. 
 
 ##### Feedback
 - You can view student feedback by clicking the **_View Feedback_** button at the top corner of the dashboard. 
@@ -113,7 +122,7 @@ WeBWorK is a proof-of-concept Java desktop application for courses that incorpor
 ##### Register
 - Enter your valid student email address and password, click **_Register_**.
 - You will see a screen to ask you to input your first name, last name and student number to complete your registration process.
-- You wll see a pop-up window says **_Registration Successful_** after you have entered all the information properly when you register.
+- You will see a pop-up window says **_Registration Successful_** after you have entered all the information properly when you register.
 
 ##### Login
 - After you have registered successfully, you will be able to log in to the student dashboard using the same email address and password that you registered with
@@ -123,11 +132,11 @@ WeBWorK is a proof-of-concept Java desktop application for courses that incorpor
 - Answer each question by selecting a multiple choice option
 - Click **_Save and Close_** if you have not finished the assignment
 - Click **_Submit and Grade_** to grade your assignment and get your mark
-- If you click **_Save and Close_**, the application will auto-fill your previous saved answers for each question and set it as default option when you open the assignment again next time.
+- If you click **_Save and Close_**, the application will auto-fill your previous saved answers for each question and set it as the default option when you open the assignment again next time.
 
 ##### Auto-marking & Submission Summary
 - The application will auto grade your assignment after you click **_Submit and Grade_**. There will be a submission summary to notify you which questions you have got right and which questions you have got wrong for the current submission. Your final mark of this assignment will get adjusted if your current try is better than the highest mark you have got in the history. 
-- You can view each assignment submission summary after the deadline of the assignment passed. Find your **_Closed_** assignments and click the **_Result_** button on the assignment result you want to reivew. You will be able to see your final mark, avergae mark, number of tries, and time spent as feedback. Click **_Done_** after reviewing it and the application would take you back to the dashboard.
+- You can view each assignment submission summary after the deadline for the assignment passed. Find your **_Closed_** assignments and click the **_Result_** button on the assignment result you want to review. You will be able to see your final mark, average mark, number of tries, and time spent as feedback. Click **_Done_** after reviewing it and the application would take you back to the dashboard.
 
 ##### Remarks
 - Click the **_Remark_** button beside the assignment you wish to get remarked
